@@ -7,6 +7,8 @@ feature "Editing A Post" do
     visit posts_path(post)
     # When I click 'Edit' and submit changes
     page.find("tbody tr:last").click_on "Edit"
+    #page.find('tr', :test => posts(:lp).title).click_on "Destroy")
+
     fill_in "Title", with: posts(:np).title
     click_on "Update Post"
     # Then the post is updated

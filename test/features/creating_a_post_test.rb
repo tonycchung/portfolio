@@ -11,5 +11,6 @@ feature "Creating A Post" do
     # Then a new post should be created and displayed
     page.text.must_include "Post was successfully created"
     page.text.must_include posts(:cf).title
+    page.text.must_include posts(:cf).body
   end
 end
