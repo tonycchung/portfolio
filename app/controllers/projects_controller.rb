@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -32,6 +32,14 @@ class ProjectsController < ApplicationController
       redirect_to @project, notice: 'Project changes have been saved.'
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @project.destroy
+    respond_to do |format|
+      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
