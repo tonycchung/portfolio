@@ -9,7 +9,20 @@ feature "Creating a new project" do
     fill_in "Technologies used", with:"Ruby, Rails, Zurb Foundation"
     click_on "Create Project"
     page.text.must_include "Project has been created"
-    assert page.has_css?("#notice"), "Expected a flash notice on this page, none found."
     page.status_code.must_equal 200
+  end
+
+ scenario "new project has invalid data" do
+    # Given invalid project data is entered in a form
+    visit projects_path
+    click_on "New Project"
+    # When the form is submitted with a short name and missing technologies_used field
+    fill_in "Name", with:"1"
+    click_on "Create Project"
+    # Then the form should be displayed again, with an error message
+    current_path.must_match /projects$/
+    page.text.must_include "Project could not be saved"
+    page.text.must_include "Name is too short"
+    page.text.must_include "Technologies used can't be blank"
   end
 end
