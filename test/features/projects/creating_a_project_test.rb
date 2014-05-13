@@ -5,8 +5,8 @@ feature "Creating a new project" do
   scenario "submit form data to create a new project" do
     visit projects_path
     click_on "New Project"
-    fill_in "Name", with:"Code Fellows Portfolio"
-    fill_in "Technologies used", with:"Ruby, Rails, Zurb Foundation"
+    fill_in "Name", with: projects(:portfolio).name
+    fill_in "Technologies used", with: projects(:portfolio).technologies_used
     click_on "Create Project"
     page.text.must_include "Project has been created"
     page.status_code.must_equal 200

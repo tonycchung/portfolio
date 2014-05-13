@@ -7,7 +7,7 @@ feature "As a site visitor I want to see individual projects" do
     # When I click on a single project
     first(:link, "Show").click
     # Then I can view the individual project
-    page.text.must_include "My favorite sports"
-    page.text.wont_include "This is a fixture title"
+    page.text.must_include projects(:mysports).name
+    page.text.wont_include projects(:portfolio).name
   end
 end
