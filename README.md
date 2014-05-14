@@ -5,9 +5,15 @@ By [Tony Chung](http://www.github.com/tonycchung).
 
 ## Approach/Description
 
+<<<<<<< HEAD
 **Used BDD and utilized minitest features to practice creating a Rails posts app using RESTful practices**
 
 
+=======
+**Used BDD and utilized minitest features to practice creating a Rails posts app using RESTful practices**  
+  
+  
+>>>>>>> master
 ## Information
 
 Here is a screenshot to the post index page.
@@ -16,7 +22,11 @@ Here is a screenshot to the post index page.
 
 ## Contributing
 
+<<<<<<< HEAD
 Thanks to my fellow Code Fellows in helping to get all of our tests to pass
+=======
+Thanks to my fellow Code Fellows in helping to get all of our tests to pass  
+>>>>>>> master
 for this project:
 
 
