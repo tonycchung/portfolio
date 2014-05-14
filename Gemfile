@@ -19,6 +19,7 @@ end
 gem 'minitest-rails'
 gem 'foundation-rails'
 gem 'rake'
+gem 'devise'
 
 group :production do
   gem 'pg'

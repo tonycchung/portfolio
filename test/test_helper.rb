@@ -22,3 +22,10 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+def sign_in
+  visit new_user_session_path
+  fill_in "Email", with: users(:yin).email
+  fill_in "Password", with: "yinyinyin"
+  click_button "Sign in"
+end
