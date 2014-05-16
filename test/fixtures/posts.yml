@@ -1,9 +1,17 @@
-cf:
+author:
   title: Becoming a Code Fellow
-  body: Means striving for excellence.
-  author: yin
+  body: Means striving for excellence
+  author: author
+  published: true
 
-np:
+editor:
   title: Testing a New Post Title
   body: This is how I learn to make Rails apps
-  author: yang
+  author: editor
+  published: true
+
+crap:
+  title: Crap post
+  body: Junk body
+  author: troll
+  published: false

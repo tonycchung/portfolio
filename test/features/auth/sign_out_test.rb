@@ -6,13 +6,14 @@ feature "As a site visitor I want to be able to sign out of my account
   scenario "Sign out" do
     # Given that I sign in with an existing user
     visit '/users/sign_in'
-    fill_in "Email", with: users(:yin).email
-    fill_in "Password", with: "yinyinyin"
+    fill_in "Email", with: users(:editor).email
+    fill_in "Password", with: "password"
     click_button "Sign in"
+
     # When I click on the sign out link
     click_on "Sign out"
-    #{ }I will be signed out of my account
+    # I will be signed out of my account
     page.must_have_content "Signed out successfully."
-    page.wont_have_content "Signed in as #{users(:yin).email}"
+    page.wont_have_content "Signed in as #{users(:editor).email}"
   end
 end

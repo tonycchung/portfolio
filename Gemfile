@@ -20,6 +20,7 @@ gem 'minitest-rails'
 gem 'foundation-rails'
 gem 'rake'
 gem 'devise'
+gem 'pundit'
 
 group :production do
   gem 'pg'
