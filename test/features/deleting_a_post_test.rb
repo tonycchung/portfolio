@@ -7,7 +7,7 @@ feature "Deleting A Post" do
     visit posts_path
     # When I click 'Delete'
     page.must_have_content title
-    page.find("tbody tr:last").click_on "Destroy"
+    page.find("tr", :text => title).click_on "Destroy"
     # The post is deleted
     page.wont_have_content title
     page.must_have_content posts(:np).title
