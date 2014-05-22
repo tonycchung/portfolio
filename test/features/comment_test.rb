@@ -28,4 +28,5 @@ feature "Commenting on a post" do
 
     # Then the comment will be visible
     page.text.must_include "This is a good comment"
+    end
 end
