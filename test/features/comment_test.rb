@@ -3,10 +3,11 @@ require "test_helper"
 feature "Commenting on a post" do
   scenario "commenting as a site visitor" do
     # Given that I visit a post
-    visit show_post_path(:editor)
+    visit show_post_path(:visitor)
 
     # When I fill in a comment form and submit
-    fill_in "Username", with: "Troll"
+    page.find("tr", :text => posts(:author).title).click_on "Show"
+    click_on "Leave a comment"
     fill_in "Comment", with: "Trololol"
     click_on "Submit"
 

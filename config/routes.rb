@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts, :projects
+  resources :projects
+  resources :posts do
+    resources :comments
+  end
 
   get 'welcome/index'
 

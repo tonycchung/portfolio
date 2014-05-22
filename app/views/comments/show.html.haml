@@ -1,0 +1,14 @@
+%p#notice
+
+%p
+  %strong Content:
+  = @comment.content
+
+%p
+  %strong Post:
+  = @post.title
+
+-#TODO add checkbox for authorizing comment
+
+= link_to 'Edit', edit_post_comment_path |
+= link_to 'Back', posts_path
