@@ -21,7 +21,7 @@ feature "Creating a new project" do
     click_on "Create Project"
     # Then the form should be displayed again, with an error message
     current_path.must_match /projects$/
-    page.text.must_include "Project could not be saved"
+    page.text.wont_include "Project has been created"
     page.text.must_include "Name is too short"
     page.text.must_include "Technologies used can't be blank"
   end

@@ -22,6 +22,13 @@
       <% end %>
     </div>
 
+    <!-- Flash Notice -->
+    <% if flash[:notice] %>
+      <div class="alert-box round">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

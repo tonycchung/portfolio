@@ -27,14 +27,14 @@ feature "Commenting on a post" do
 
     # When I click on the 'approved' button
     page.find('tr', :text => comments(:good_comment_unauth).content).click_on "Edit"
-    click_on 'Approved'
+    check 'Approved'
     click_on "Update Comment"
 
     # Then the comment will be visible to a visitor
     click_on "Sign out"
     visit posts_path
     page.find('tr', :text => title).click_on "Show"
-    page.find('tr', :text => comments(:approved)).must_be true
+    page.text.must_include "This comment will rule"
 
   end
 

@@ -1,12 +1,13 @@
-require 'simplecov'
-SimpleCov.start
-
 # Rails.new = "test"
-ENV["RAILS_ENV"] = "test"
-require File.expand_path("../../config/environment", __FILE__)
-require "rails/test_help"
-require "minitest/rails"
-require "minitest/rails/capybara"
+if ENV["RAILS_ENV"] = "test"
+  require 'simplecov'
+  SimpleCov.start
+  puts "required "
+  require File.expand_path("../../config/environment", __FILE__)
+  require "rails/test_help"
+  require "minitest/rails"
+  require "minitest/rails/capybara"
+end
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
