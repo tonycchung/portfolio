@@ -8,9 +8,19 @@
         %li = message
 
   .field
+    = f.label :author
+    %br
+    = f.text_area :author
+
+  .field
     = f.label :content
     %br
     = f.text_area :content
+
+  #field
+    - if policy(@comment).approve?
+      = f.label :approved
+      = f.check_box :approved
 
   .actions
     = f.submit

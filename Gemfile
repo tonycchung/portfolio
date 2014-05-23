@@ -24,6 +24,8 @@ gem 'devise'
 gem 'pundit'
 gem 'haml'
 gem 'html2haml'
+gem 'omniauth-twitter'
+gem 'figaro'
 
 group :production do
   gem 'pg'

@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   before_action :load_posts
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
+
+  def index
+    @comments = Comment.all
+  end
 
   def new
     @comment = @post.comments.build
@@ -41,7 +45,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to [@post, @comment], notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @post, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
