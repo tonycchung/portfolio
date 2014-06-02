@@ -12,8 +12,25 @@
   </head>
 
   <body>
+    <div>
+      <% if current_user.present? %>
+        Signed in as <%= current_user.email %> Not you?
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> / <%= link_to "Sign in", new_user_session_path %> or
+        <%= link_to "Sign in with twitter", user_omniauth_authorize_path(:twitter) %>
+      <% end %>
+    </div>
+
+    <!-- Flash Notice -->
+    <% if flash[:notice] %>
+      <div class="alert-box round">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
+
 </html>
