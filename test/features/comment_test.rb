@@ -1,5 +1,12 @@
 require "test_helper"
 
+def new_comment
+  click_on "Leave a comment"
+  fill_in "Author", with: "Troll"
+  fill_in "Content", with: "Trololol"
+  click_on "Create Comment"
+end
+
 feature "Commenting on a post" do
   scenario "commenting as a site visitor" do
     # Given that I visit a post
@@ -8,10 +15,7 @@ feature "Commenting on a post" do
 
     # When I fill in a comment form and submit
     page.find("tr", :text => title).click_on "Show"
-    click_on "Leave a comment"
-    fill_in "Author", with: "Troll"
-    fill_in "Content", with: "Trololol"
-    click_on "Create Comment"
+    new_comment
 
     # Then a comment will be created but won't show up on the page
     page.text.must_include "Comment was successfully created"
@@ -35,7 +39,6 @@ feature "Commenting on a post" do
     visit posts_path
     page.find('tr', :text => title).click_on "Show"
     page.text.must_include "This comment will rule"
-
   end
 
   scenario "see approved comment as a visitor" do
@@ -48,5 +51,19 @@ feature "Commenting on a post" do
     # Then I will only see approved comments
     page.text.must_include "This comment rules"
     page.text.wont_include "This comment sucks"
+  end
+end
+
+feature "Commenting on projects" do
+  scenario "commenting as a site visitor" do
+  # Given that I view a project
+  visit projects_path
+
+  # When I fill in a comment form and submit it
+  page.find("tr", :text => projects(:portfolio).name).click_on "Show"
+  new_comment
+
+  # Then a comment will be posted on the project page
+  page.text.must_include "Comment was successfully created"
   end
 end

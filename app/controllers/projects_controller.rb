@@ -22,6 +22,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @commentable = @project
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def edit

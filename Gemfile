@@ -26,6 +26,7 @@ gem 'haml'
 gem 'html2haml'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'launchy'
 
 group :production do
   gem 'pg'
