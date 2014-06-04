@@ -13,12 +13,19 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :test do
   gem "minitest-rails-capybara"
+  gem 'simplecov', :require => false
 end
 
 # Gems not added by default by rails
 gem 'minitest-rails'
 gem 'foundation-rails'
 gem 'rake'
+gem 'devise'
+gem 'pundit'
+gem 'haml'
+gem 'html2haml'
+gem 'omniauth-twitter'
+gem 'figaro'
 
 group :production do
   gem 'pg'
@@ -28,4 +35,6 @@ end
 group :development do
   gem 'sqlite3'
   gem 'spring'
+  gem 'rails_layout'
+  gem 'erb2haml'
 end

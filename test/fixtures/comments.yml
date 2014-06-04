@@ -1,0 +1,17 @@
+bad_comment:
+  content: This comment sucks
+  author: troll
+  approved: false
+  post: crap
+
+good_comment_unauth:
+  content: This comment will rule
+  author: author
+  approved: false
+  post: author
+
+good_comment_auth:
+  content: This comment rules
+  author: editor
+  approved: true
+  post: editor

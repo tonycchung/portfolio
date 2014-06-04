@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<p id="author">
+  <b>By:</b>
+  <%= @post.author.email %>
+</p>
+
+<p id="status">
+  <b>Status:</b>
+  <%= @post.published? ? "Published" : "Unpublished" %>
+</p>
+
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -10,5 +20,32 @@
   <%= @post.body %>
 </p>
 
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path %> |
+<%= link_to 'Leave a comment', new_post_comment_path(@post) %>
+<br></br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Comment</th> 
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% policy_scope(@post.comments).each do |comment| %>
+      <tr id="<%= dom_id(@post) %>">
+        <td><%= comment.author %></td>
+        <td><%= comment.content %></td>
+        <td><%= comment.approved %></td>
+        <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
+        <% if policy(comment).destroy? %>
+          <td><%= link_to 'Destroy', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
