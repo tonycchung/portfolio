@@ -6,9 +6,11 @@ feature "Sending an email from the site" do
     visit new_contact_path
 
     # When I fill out the contact page form
-    visit new_post_path
+    fill_in "Name", with: "Test contact"
+    fill_in "Email", with: "testcontact@example.com"
+    fill_in "Message", with: "Test message"
 
     # Then the site owner will receive my message in an email
-    page.wont_have_field("Published")
+    page.text.must_include "Your message has been sent!"
   end
 end
