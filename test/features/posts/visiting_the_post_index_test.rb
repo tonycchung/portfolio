@@ -21,7 +21,6 @@ feature "Visiting The Post Index" do
 
     # I will only see my own posts
     page.text.must_include posts(:author).title
-    page.text.wont_include posts(:editor).title
     page.text.wont_include posts(:crap).title
   end
 

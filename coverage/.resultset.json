@@ -53,13 +53,6 @@
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/home/anthony/code_fellows/portfolio/config/initializers/backtrace_silencers.rb": [
@@ -501,41 +494,6 @@
         1,
         null
       ],
-      "/home/anthony/code_fellows/portfolio/test/features/auth/sign_in_test.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
       "/home/anthony/code_fellows/portfolio/test/features/auth/sign_out_test.rb": [
         1,
         null,
@@ -673,6 +631,9 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
         1,
         null,
         null,
@@ -820,7 +781,6 @@
         1,
         null,
         null,
-        1,
         1,
         1,
         null,
@@ -981,18 +941,18 @@
         null,
         null
       ],
+      "/home/anthony/code_fellows/portfolio/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/anthony/code_fellows/portfolio/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         1,
-        null
-      ],
-      "/home/anthony/code_fellows/portfolio/app/controllers/welcome_controller.rb": [
-        1,
-        1,
-        null,
         null
       ],
       "/home/anthony/code_fellows/portfolio/app/controllers/posts_controller.rb": [
@@ -1199,6 +1159,21 @@
         null,
         null
       ],
+      "/home/anthony/code_fellows/portfolio/app/controllers/omniauth_callbacks_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null
+      ],
       "/home/anthony/code_fellows/portfolio/app/controllers/projects_controller.rb": [
         1,
         1,
@@ -1258,34 +1233,6 @@
         1,
         9,
         null,
-        null
-      ],
-      "/home/anthony/code_fellows/portfolio/app/controllers/contacts_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/anthony/code_fellows/portfolio/app/models/contact.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
         null
       ],
       "/home/anthony/code_fellows/portfolio/app/controllers/comments_controller.rb": [
@@ -1359,23 +1306,46 @@
         null,
         null
       ],
-      "/home/anthony/code_fellows/portfolio/app/controllers/omniauth_callbacks_controller.rb": [
+      "/home/anthony/code_fellows/portfolio/app/controllers/contacts_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
         1,
-        1,
-        1,
+        0,
         null,
         0,
-        0,
         null,
+        null,
+        null
+      ],
+      "/home/anthony/code_fellows/portfolio/app/models/contact.rb": [
+        1,
+        1,
         null,
         1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/anthony/code_fellows/portfolio/app/mailers/user_mailer.rb": [
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1402421460
+    "timestamp": 1402442683
   },
   "Unknown Test Framework": {
     "coverage": {

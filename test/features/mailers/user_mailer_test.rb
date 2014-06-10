@@ -9,6 +9,7 @@ feature "Sending an email from the site" do
     fill_in "Name", with: "Test contact"
     fill_in "Email", with: "testcontact@example.com"
     fill_in "Message", with: "Test message"
+    click_on "Submit"
 
     # Then the site owner will receive my message in an email
     page.text.must_include "Your message has been sent!"
