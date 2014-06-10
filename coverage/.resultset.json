@@ -48,6 +48,18 @@
         null,
         null,
         1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/home/anthony/code_fellows/portfolio/config/initializers/backtrace_silencers.rb": [
@@ -387,6 +399,8 @@
         null,
         null,
         1,
+        null,
+        1,
         1,
         null
       ],
@@ -643,6 +657,22 @@
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/anthony/code_fellows/portfolio/test/features/mailers/user_mailer_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
         1,
         null,
         null,
@@ -951,17 +981,6 @@
         null,
         null
       ],
-      "/home/anthony/code_fellows/portfolio/test/features/static_welcome_page_test.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
       "/home/anthony/code_fellows/portfolio/app/controllers/application_controller.rb": [
         1,
         null,
@@ -1241,6 +1260,34 @@
         null,
         null
       ],
+      "/home/anthony/code_fellows/portfolio/app/controllers/contacts_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/anthony/code_fellows/portfolio/app/models/contact.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/anthony/code_fellows/portfolio/app/controllers/comments_controller.rb": [
         1,
         1,
@@ -1328,7 +1375,7 @@
         null
       ]
     },
-    "timestamp": 1402006663
+    "timestamp": 1402421460
   },
   "Unknown Test Framework": {
     "coverage": {
