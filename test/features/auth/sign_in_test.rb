@@ -27,7 +27,7 @@ feature "As a site visitor I want to sign into my account so I can
                             info: { nickname: 'test_twitter_user'},
                             })
    click_on "Sign in with Twitter"
-   save_and_open_page
+   # save_and_open_page
    page.must_have_content "test_twitter_user, you are signed in!"
   end
 end

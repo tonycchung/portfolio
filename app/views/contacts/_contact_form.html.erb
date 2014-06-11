@@ -1,0 +1,14 @@
+<h1 align="center">Contact Me!</h1>
+
+<%= form_for @contact do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :message %>
+  <%= f.text_area :message %>
+
+  <%= f.submit 'Submit' %>
+<% end %>
