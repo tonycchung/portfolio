@@ -29,5 +29,6 @@
 <br>
 
 <% if current_user.present? %>
-  <%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New Post', new_post_path %> | 
 <% end %>
+<%= link_to 'Home', root_path %>

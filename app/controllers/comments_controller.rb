@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :load_posts
+  before_filter :load_commentable
   before_action :set_comment, only: [:edit, :update, :destroy]
 
   def index
@@ -7,32 +7,32 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = @post.comments.build
+    @comment = @commentable.comments.build
   end
 
   def edit
-    @comment = @post.comments.find(params[:id])
+    @comment = @commentable.comments.find(params[:id])
   end
 
   def create
-    @comment = @post.comments.build(comment_params)
+    @comment = @commentable.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @post, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @commentable, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        instance_variable_set("@#{@resource.singularize}".to_sym, @commmentable)
+        render template: "#{@resources}/show"
       end
     end
   end
 
   def update
-    @comment = @post.comments.find(params[:id])
+    @comment = @commentable.comments.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @post, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @commentable, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -42,10 +42,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @post.comments.find(params[:id])
+    @comment = @commentable.comments.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to @post, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @commentable, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -56,12 +56,14 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  def load_posts
-    @post = Post.find(params[:post_id])
+  def load_commentable
+    @resource, id = request.path.split('/')[1,2]
+    @commentable = @resource.singularize.classify.constantize.find(id)
+    # same as Post.find(id) or Project.find(id)
   end
 
   def comment_params
-    params.require(:comment).permit(:author, :author_url, :author_email, :user_ip, :user_agent, :referrer, :content, :approved, :post_id)
+    params.require(:comment).permit(:author, :author_url, :author_email, :user_ip, :user_agent, :referrer, :content, :approved, :commentable_id)
   end
 
 end
