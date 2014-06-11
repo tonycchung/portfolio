@@ -27,6 +27,8 @@ gem 'html2haml'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'launchy'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '~> 1.5.7'
 
 group :production do
   gem 'pg'
