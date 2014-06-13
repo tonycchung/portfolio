@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Tony-Chung.com" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -24,10 +24,6 @@
     
     <div>
       <%= link_to 'Contact me!', new_contact_path %>
-    </div>
-
-    <div>
-      <%= link_to "Contact me!", contact_path %>
     </div>
 
     <!-- Flash Notice -->
