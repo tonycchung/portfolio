@@ -1,0 +1,2 @@
+$("#edit_project_<%= @project.id %>").remove()
+$("#<%= dom_id @project %>").append("<%= j render @project %>")

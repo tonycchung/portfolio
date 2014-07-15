@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Tony-Chung.com" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -20,6 +20,10 @@
         <%= link_to "Sign up", new_user_registration_path %> / <%= link_to "Sign in", new_user_session_path %> or
         <%= link_to "Sign in with twitter", user_omniauth_authorize_path(:twitter) %>
       <% end %>
+    </div>
+    
+    <div>
+      <%= link_to 'Contact me!', new_contact_path %>
     </div>
 
     <!-- Flash Notice -->
